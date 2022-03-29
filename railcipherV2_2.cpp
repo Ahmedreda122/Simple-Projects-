@@ -1,6 +1,5 @@
 /*
 	Author: Ahmad Reda Bayoumy
-    ID: 20210019
 	Date: 24 / 3 / 2022
 	Description: This code represent Rail cipher method to encrypt and decrypt text.
 */
