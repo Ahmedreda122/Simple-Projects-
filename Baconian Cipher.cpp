@@ -100,7 +100,7 @@ void encrypt(string& txt)
 			index = index / 2;
 		}
 
-		//returning binary ascii code of the letter as a for 0 and b for 1.
+		// Returning binary ascii code of the letter as a for 0 and b for 1.
 		for(int k = 4; k >= 0; --k)
 		{
 			if (bin[k] == 0)
