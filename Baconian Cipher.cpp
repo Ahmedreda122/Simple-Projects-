@@ -14,7 +14,6 @@ void encrypt(string& txt);
 
 int main()
 {
-	
     cout << "1- Encrypt a text using Baconian cipher\n" <<
             "2- Decrypt a text using Baconian cipher\n" <<
             "3- Exit.\n" <<
