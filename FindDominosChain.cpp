@@ -11,7 +11,7 @@ linked together only if the numbers match. For example, we can form a chain cons
 these dominos by connecting them in the following order:
 2|6  6|1  1|4  4|4  4|3
 
-->In our Program we find this chain with positive number you enter not just from 1 to 6
+->In our Program we find this chain(By Applying BackTracking algorithm) with positive number you enter not just from 1 to 6
 
 ->Note: In traditional dominos, you can rotate a domino y so that its numbers are reversed. As a 
 simplification in this problem, this operation is not allowed, which means that the dominos must appear 
