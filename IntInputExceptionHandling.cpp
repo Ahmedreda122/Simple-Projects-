@@ -32,9 +32,10 @@ int main()
       cout << e.what() << endl;
       cout << "Try again, ";
     }
-    // Clear cin buffer and ignore previous input
+    // Clears the error flags on cin caused by the failure that happens when entering invalid input
     cin.clear();
-    cin.ignore(999, '\n');
+    // Ignoring previous input up to 9999 or when a newline char is located
+    cin.ignore(9999, '\n');
   }
 
   cout << "You Entered: " << num << endl;
