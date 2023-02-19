@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Islam"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-11-03 03:44:39 PM"/>
+        <attribute name="created" value="SXNsYW07T1BSRUtJTi1QQzsyMDIxLTExLTAzOzA5OjA0OjQ1IEFNOzI0OTE="/>
+        <attribute name="edited" value="SXNsYW07T1BSRUtJTi1QQzsyMDIxLTExLTAzOzAzOjQ0OjM5IFBNOzc7MjYyMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="decfrac" type="Real" array="False" size=""/>
+            <input variable="decfrac"/>
+            <declare name="dn" type="Integer" array="False" size=""/>
+            <assign variable="dn" expression="decfrac"/>
+            <declare name="df" type="String" array="True" size="8"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <declare name="q" type="Integer" array="False" size=""/>
+            <for variable="q" start="0" end="7" direction="inc" step="1">
+                <assign variable="df[q]" expression="&quot;0&quot;"/>
+            </for>
+            <while expression="dn != 0">
+                <if expression="dn % 2 &gt; 0">
+                    <then>
+                        <assign variable="df[i]" expression="&quot;1&quot;"/>
+                    </then>
+                    <else>
+                        <assign variable="df[i]" expression="&quot;0&quot;"/>
+                    </else>
+                </if>
+                <assign variable="i" expression="i+1"/>
+                <assign variable="dn" expression="dn / 2"/>
+            </while>
+            <declare name="g" type="Integer" array="False" size=""/>
+            <for variable="g" start="7" end="0" direction="dec" step="1">
+                <output expression="df[g]" newline="False"/>
+            </for>
+            <output expression="&quot;.&quot;" newline="False"/>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <for variable="a" start="0" end="7" direction="inc" step="1">
+                <assign variable="df[a]" expression="&quot;0&quot;"/>
+            </for>
+            <declare name="F" type="Real" array="False" size=""/>
+            <declare name="dn1" type="Integer" array="False" size=""/>
+            <assign variable="dn1" expression="decfrac"/>
+            <assign variable="F" expression="(decfrac) - (dn1)"/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <assign variable="j" expression="0"/>
+            <declare name="p" type="Integer" array="False" size=""/>
+            <assign variable="p" expression="-1"/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <while expression="F &gt; 0">
+                <if expression="F - 2^(p) &gt;= 0">
+                    <then>
+                        <assign variable="df[j]" expression="&quot;1&quot;"/>
+                        <assign variable="F" expression="F - 2^(p)"/>
+                        <assign variable="p" expression="p - 1"/>
+                    </then>
+                    <else>
+                        <assign variable="df[j]" expression="&quot;0&quot;"/>
+                        <assign variable="p" expression="p - 1"/>
+                    </else>
+                </if>
+                <assign variable="j" expression="j+1"/>
+                <if expression="j &gt; 7">
+                    <then>
+                        <assign variable="F" expression="-1"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <for variable="k" start="0" end="7" direction="inc" step="1">
+                <output expression="df[k]" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
